@@ -1,13 +1,17 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
+
+BASE_DIR = os.path.dirname(__file__)
+MODEL_DIR = os.path.abspath(os.path.join(BASE_DIR, '..', 'model'))
 
 # Load model and preprocessors
-model = joblib.load('../model/model.pkl')
-encoder_sex = joblib.load('../model/encoder_sex.pkl')
-encoder_embarked = joblib.load('../model/encoder_embarked.pkl')
-encoder_deck = joblib.load('../model/encoder_deck.pkl')
-constants = joblib.load('../model/constants.pkl')
+model = joblib.load(os.path.join(MODEL_DIR, 'model.pkl'))
+encoder_sex = joblib.load(os.path.join(MODEL_DIR, 'encoder_sex.pkl'))
+encoder_embarked = joblib.load(os.path.join(MODEL_DIR, 'encoder_embarked.pkl'))
+encoder_deck = joblib.load(os.path.join(MODEL_DIR, 'encoder_deck.pkl'))
+constants = joblib.load(os.path.join(MODEL_DIR, 'constants.pkl'))
 
 # Extract constants
 age_median = constants['age_median']
