@@ -3,11 +3,11 @@ import pandas as pd
 import joblib
 
 # Load model and preprocessors
-model = joblib.load('model/model.pkl')
-encoder_sex = joblib.load('model/encoder_sex.pkl')
-encoder_embarked = joblib.load('model/encoder_embarked.pkl')
-encoder_deck = joblib.load('model/encoder_deck.pkl')
-constants = joblib.load('model/constants.pkl')
+model = joblib.load('../model/model.pkl')
+encoder_sex = joblib.load('../model/encoder_sex.pkl')
+encoder_embarked = joblib.load('../model/encoder_embarked.pkl')
+encoder_deck = joblib.load('../model/encoder_deck.pkl')
+constants = joblib.load('../model/constants.pkl')
 
 # Extract constants
 age_median = constants['age_median']
